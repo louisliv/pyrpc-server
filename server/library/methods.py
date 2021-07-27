@@ -1,5 +1,9 @@
 from pyrpc.decorators import safe_method
 
+@safe_method
+def print_hello():
+    return "hello"
+
 class Library():
     @safe_method
     def sum_two_numbers(self, operand1=0, operand2=0):

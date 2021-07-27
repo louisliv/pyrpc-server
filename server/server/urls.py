@@ -16,13 +16,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls import include
-from rest_framework import routers
-from library.views import LibraryViewSet
-
-router = routers.DefaultRouter()
-router.register(r'methods', LibraryViewSet, basename="methods")
+from pyrpc.urls import urls as pyrpc_urls
 
 urlpatterns = [
-    path('api/', include(router.urls)),
+    path('api/', include(pyrpc_urls)),
     path('admin/', admin.site.urls),
 ]
